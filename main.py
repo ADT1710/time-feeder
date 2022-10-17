@@ -1,5 +1,6 @@
 from datetime import datetime, timedelta, time, date
 from pymysql import cursors
+from define_dia_semana import define_dia_semana
 
 data_inicial = datetime.strptime('01/01/2000', '%d/%m/%Y')
 data_final = datetime.strptime('31/12/2022', '%d/%m/%Y')
@@ -7,4 +8,6 @@ data_final = datetime.strptime('31/12/2022', '%d/%m/%Y')
 diferenca = (data_final - data_inicial).days
 
 for dia in range(diferenca):
-    print(data_inicial + timedelta(dia+1))
+    data = data_inicial + timedelta(dia+1)
+    dia_semana = define_dia_semana(data.weekday())
+    print(f'{data} | {dia_semana}')
