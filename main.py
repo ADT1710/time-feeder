@@ -4,6 +4,7 @@ from define_dia_semana import define_dia_semana
 from define_semana import define_semana
 from define_mes_nome import define_mes_nome
 from define_trimestre import define_trimestre_num, define_trimestre_nome
+from define_semestre import define_semestre_num, define_semestre_nome
 
 data_inicial = datetime.strptime('01/01/2000', '%d/%m/%Y')
 data_final = datetime.strptime('31/12/2022', '%d/%m/%Y')
@@ -18,4 +19,6 @@ for dia in range(diferenca):
     mes_nome = define_mes_nome(mes_num)
     trimestre_num = define_trimestre_num(mes_num)
     trimestre_nome = define_trimestre_nome(trimestre_num)
-    print(f'{data} | {dia_semana} | {semana} | {mes_num} - {mes_nome} | {trimestre_num} - {trimestre_nome}')
+    semestre_num = define_semestre_num(int(trimestre_num))
+    semestre_nome = define_semestre_nome(semestre_num)
+    print(f'{data} | {dia_semana} | {semana} | {mes_num} - {mes_nome} | {trimestre_num} - {trimestre_nome} | {semestre_num} | {semestre_nome}')
