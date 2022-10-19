@@ -3,6 +3,7 @@ from pymysql import cursors
 from define_dia_semana import define_dia_semana
 from define_semana import define_semana
 from define_mes_nome import define_mes_nome
+from define_trimestre import define_trimestre_num, define_trimestre_nome
 
 data_inicial = datetime.strptime('01/01/2000', '%d/%m/%Y')
 data_final = datetime.strptime('31/12/2022', '%d/%m/%Y')
@@ -15,4 +16,6 @@ for dia in range(diferenca):
     semana = define_semana(data.day)
     mes_num = data.month
     mes_nome = define_mes_nome(mes_num)
-    print(f'{data} | {dia_semana} | {semana} | {mes_num} - {mes_nome}')
+    trimestre_num = define_trimestre_num(mes_num)
+    trimestre_nome = define_trimestre_nome(trimestre_num)
+    print(f'{data} | {dia_semana} | {semana} | {mes_num} - {mes_nome} | {trimestre_num} - {trimestre_nome}')
