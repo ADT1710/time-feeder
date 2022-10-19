@@ -13,12 +13,23 @@ diferenca = (data_final - data_inicial).days
 
 for dia in range(diferenca):
     data = data_inicial + timedelta(dia+1)
+
     dia_semana = define_dia_semana(data.weekday())
     semana = define_semana(data.day)
+
     mes_num = data.month
     mes_nome = define_mes_nome(mes_num)
+
+    ano = data.year
+
     trimestre_num = define_trimestre_num(mes_num)
     trimestre_nome = define_trimestre_nome(trimestre_num)
+
     semestre_num = define_semestre_num(int(trimestre_num))
     semestre_nome = define_semestre_nome(semestre_num)
-    print(f'{data} | {dia_semana} | {semana} | {mes_num} - {mes_nome} | {trimestre_num} - {trimestre_nome} | {semestre_num} | {semestre_nome}')
+
+    cod_dia = data.strftime('%Y%m%d')
+    dia_mes = data.strftime('%m%d')
+    mes_ano = data.strftime('%Y%m')
+
+    print(f'{cod_dia} | {dia_mes} | {mes_ano} |{data} | {dia_semana} | {semana} | {mes_num} - {mes_nome} | {trimestre_num} - {trimestre_nome} | {semestre_num} | {semestre_nome}')
