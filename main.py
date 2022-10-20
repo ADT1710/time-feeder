@@ -32,4 +32,6 @@ for dia in range(diferenca):
     dia_mes = data.strftime('%m%d')
     mes_ano = data.strftime('%Y%m')
 
-    print(f'{cod_dia} | {dia_mes} | {mes_ano} |{data} | {dia_semana} | {semana} | {mes_num} - {mes_nome} | {trimestre_num} - {trimestre_nome} | {semestre_num} | {semestre_nome}')
+    data_formatada = data.strftime("%Y-%m-%d")
+
+    print(f'{cod_dia} | {dia_mes} | {mes_ano} |{data_formatada} | {dia_semana} | {semana} | {mes_num} - {mes_nome} | {trimestre_num} - {trimestre_nome} | {semestre_num} | {semestre_nome}')
