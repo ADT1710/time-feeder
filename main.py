@@ -14,8 +14,8 @@ diferenca = (data_final - data_inicial).days
 conexao = pymysql.connect(host='localhost',
                           user='root',
                           password='passtest',
-                          database ='db'
-                          )
+                          database ='db')
+
 with conexao:
     with conexao.cursor() as cursor:
         for dia in range(diferenca):
